@@ -1,0 +1,168 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://title/button/g.tscn" type="PackedScene" id=2]
+[ext_resource path="res://title/button/a.tscn" type="PackedScene" id=3]
+[ext_resource path="res://title/button/cg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://title/button/b.tscn" type="PackedScene" id=5]
+[ext_resource path="res://title/button/e.tscn" type="PackedScene" id=6]
+[ext_resource path="res://title/button/ca.tscn" type="PackedScene" id=7]
+[ext_resource path="res://title/button/d.tscn" type="PackedScene" id=8]
+[ext_resource path="res://title/button/f.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sound/sound_cg.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sound/sound_e.mp3" type="AudioStream" id=11]
+[ext_resource path="res://sound/sound_f.mp3" type="AudioStream" id=12]
+[ext_resource path="res://sound/sound_a.mp3" type="AudioStream" id=13]
+[ext_resource path="res://title/world.gd" type="Script" id=14]
+[ext_resource path="res://sound/sound_ca.mp3" type="AudioStream" id=15]
+[ext_resource path="res://sound/sound_d.mp3" type="AudioStream" id=16]
+[ext_resource path="res://sound/sound_b.mp3" type="AudioStream" id=17]
+[ext_resource path="res://sound/sound_g.mp3" type="AudioStream" id=18]
+[ext_resource path="res://world/brackground 1/fondo.0001.bmp" type="Texture" id=27]
+
+[node name="world" type="Node"]
+script = ExtResource( 14 )
+
+[node name="background" type="TextureRect" parent="."]
+modulate = Color( 0.92549, 0.901961, 0.207843, 1 )
+self_modulate = Color( 0.937255, 0.909804, 0.109804, 1 )
+margin_left = 2.0
+margin_top = -10.0
+margin_right = 1562.0
+margin_bottom = 710.0
+texture = ExtResource( 27 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.051
+anchor_top = 0.051
+anchor_right = 0.949
+anchor_bottom = 0.919
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1400.0
+margin_bottom = 624.0
+custom_constants/separation = 43
+
+[node name="cg" parent="MarginContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_top = 40.0
+margin_right = 163.0
+margin_bottom = 583.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/cg" index="0"]
+toggle_mode = true
+
+[node name="d" parent="MarginContainer/HBoxContainer" instance=ExtResource( 8 )]
+margin_left = 206.0
+margin_top = 46.0
+margin_right = 361.0
+margin_bottom = 577.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/d" index="0"]
+toggle_mode = true
+
+[node name="e" parent="MarginContainer/HBoxContainer" instance=ExtResource( 6 )]
+margin_left = 404.0
+margin_top = 54.0
+margin_right = 548.0
+margin_bottom = 569.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/e" index="0"]
+toggle_mode = true
+
+[node name="f" parent="MarginContainer/HBoxContainer" instance=ExtResource( 9 )]
+margin_left = 591.0
+margin_top = 60.0
+margin_right = 730.0
+margin_bottom = 564.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/f" index="0"]
+toggle_mode = true
+
+[node name="g" parent="MarginContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 773.0
+margin_top = 67.0
+margin_right = 902.0
+margin_bottom = 556.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/g" index="0"]
+toggle_mode = true
+
+[node name="a" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 945.0
+margin_top = 73.0
+margin_right = 1066.0
+margin_bottom = 551.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/a" index="0"]
+toggle_mode = true
+pressed = true
+
+[node name="b" parent="MarginContainer/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 1109.0
+margin_top = 80.0
+margin_right = 1235.0
+margin_bottom = 543.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/b" index="0"]
+toggle_mode = true
+
+[node name="ca" parent="MarginContainer/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 1278.0
+margin_top = 87.0
+margin_right = 1398.0
+margin_bottom = 537.0
+
+[node name="TextureButton" parent="MarginContainer/HBoxContainer/ca" index="0"]
+toggle_mode = true
+
+[node name="sound" type="Node2D" parent="." groups=[
+"sound",
+]]
+
+[node name="cg" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 10 )
+
+[node name="d" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 16 )
+
+[node name="e" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 11 )
+
+[node name="f" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 12 )
+
+[node name="g" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 18 )
+
+[node name="a" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 13 )
+
+[node name="b" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 17 )
+
+[node name="ca" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource( 15 )
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/cg/TextureButton" to="." method="_on_cg_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/d/TextureButton" to="." method="_on_d_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/e/TextureButton" to="." method="_on_e_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/f/TextureButton" to="." method="_on_f_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/g/TextureButton" to="." method="_on_g_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/a/TextureButton" to="." method="_on_a_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/b/TextureButton" to="." method="_on_b_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ca/TextureButton" to="." method="_on_ca_TextureButton_pressed"]
+
+[editable path="MarginContainer/HBoxContainer/cg"]
+[editable path="MarginContainer/HBoxContainer/d"]
+[editable path="MarginContainer/HBoxContainer/e"]
+[editable path="MarginContainer/HBoxContainer/f"]
+[editable path="MarginContainer/HBoxContainer/g"]
+[editable path="MarginContainer/HBoxContainer/a"]
+[editable path="MarginContainer/HBoxContainer/b"]
+[editable path="MarginContainer/HBoxContainer/ca"]

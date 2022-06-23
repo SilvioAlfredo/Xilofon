@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://placas/e1.png" type="Texture" id=1]
+[ext_resource path="res://title/start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://placas/e2.png" type="Texture" id=3]
+
+[node name="e" instance=ExtResource( 2 )]
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureButton" parent="." index="0"]
+margin_right = 144.0
+margin_bottom = 515.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://placas/background1buttona.0001.png" type="Texture" id=1]
+[ext_resource path="res://placas/background1button.0001.png" type="Texture" id=2]
+
+[node name="start" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 283.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
